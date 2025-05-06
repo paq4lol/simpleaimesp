@@ -101,22 +101,6 @@ updateWeaponName()
 v.Character.ChildAdded:Connect(updateWeaponName)
 v.Character.ChildRemoved:Connect(updateWeaponName)
 
-    local function updateWeaponName()
-        local toolName = ""
-        for _, item in pairs(v.Character:GetChildren()) do
-            if item:IsA("Tool") then
-                toolName = item.Name
-                break
-            end
-        end
-        weaponTag.Text = toolName
-    end
-
-    updateWeaponName()
-    v.Character.ChildAdded:Connect(updateWeaponName)
-    v.Character.ChildRemoved:Connect(updateWeaponName)
-end
-
 local LoadPlayer = function(v)
     local vHolder = Instance.new("Folder", Holder)
     vHolder.Name = v.Name
